@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="/">Back to the list</a>
+    <div>
+        <p>Order id: {{ order.id }}</p>
+        <p>Recipient: {{ order.recipient_name }}</p>
+        <p>Address: {{ order.address }}</p>
+        <p>Number: {{ order.number }}</p>
+        <p>Status: {{ order.status }}</p>
+        <hr />
+
+        {% for log in logs %}
+            <div>
+                {{ log.user }}
+                {{ log.createdAt.format('Y-m-d') }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <form method="post" name="form_data" action="/">
+        <input type="hidden" name="orderNumber" value="{{ order.id }}" >
+        <input type="hidden" name="update" value="true">
+        <select name="status">
+            <option value="created">Created</option>
+            <option value="picked">Picked</option>
+            <option value="complete">Complete</option>
+        </select>
+
+        <button type="submit">Update order</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for order in orders %}
+        <div>
+            <p>Order id: {{ order.id }}</p>
+            <p>Recipient: {{ order.recipientName }}</p>
+            <p>Address: {{ order.address }}</p>
+            <p>Number: {{ order.number }}</p>
+            <p>Status: {{ order.status }}</p>
+            <a href="/show?orderId={{ order.id }}">View</a>
+            <hr />
+        </div>
+    {% endfor %}
+{% endblock %}
