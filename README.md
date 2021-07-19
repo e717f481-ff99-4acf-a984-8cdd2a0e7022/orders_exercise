@@ -32,7 +32,11 @@ The project has 2 pages:
 # Requirements
 1. Check the entities and find potential issues or improvements with the code in `src\Entity\`
 2. Improve the code in the `OrdersController` class, which can be found in `src\Controller\`, to better match the routes, and the current business flows
-3. Add a new page in which orders can be created
+3. Add a new page in which orders can be created. For orders, we need the following fields:
+      - `status`: will always have the value `created` for new orders
+      - `recipientName`
+      - `address`
+      - `number`
 
 ### Notes:
 - Routes can be configured in `config\routes.yaml`
