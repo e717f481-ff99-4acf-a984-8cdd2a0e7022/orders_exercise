@@ -28,6 +28,9 @@ The project has 2 pages:
 2. Show page
     - with all the details of an order
     - allows the update of order status
+3. Audit logs
+    - when a order page is accessed
+    - when a order is created / modified
 
 # Requirements
 1. Check the entities and find potential issues or improvements with the code in `src\Entity\`
